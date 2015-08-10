@@ -1,0 +1,19 @@
+.menu {
+    background-color: grey;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.menu li {
+	display: inline-block;
+	list-style: inherit;
+	padding: 5px;
+	font: bold Tahoma;
+	color: white;
+}
+img {
+	display: inline-block;
+}
+h1 {
+	display: inline-block;
+}
