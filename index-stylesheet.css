@@ -2,6 +2,7 @@
     background-color: grey;
     border: 1px solid black;
     padding: 20px;
+    ul{list-style-type: none;}
 }
 
 .menu a {
@@ -11,6 +12,8 @@
 	font: bold Tahoma;
 	color: white;
 	text-decoration: none;
+	ul{list-style-type: none;}
+}
 }
 img {
 	display: inline-block;
