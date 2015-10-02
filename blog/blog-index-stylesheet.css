@@ -30,8 +30,20 @@ h1 {
 	padding-top: 200px;
 }
 
+{
+	margin: 75px 0 75px 0;
+}
 
-#photo {
+.blog_posts a {
+	color: #3a3a3a;
+}
+
+.blog_posts a:hover {
+	color: #34A9FF;
+}
+
+
+.photo {
 	height: 164px;
 	padding-bottom: 20px;
 	width: 106px;
@@ -79,6 +91,7 @@ ul {
 li {
 	font-size: 16px;
 	padding-bottom: 16px;
+	text-decoration: none;
 }
 
 header {
@@ -109,4 +122,3 @@ header {
 	bottom: 0;
 	display: inline-block;
 }
-
