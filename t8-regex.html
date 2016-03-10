@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Regular Expressions in Ruby</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/Brooklyn_Bridge1/Brooklyn_Bridge1.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Regex in Ruby</h1>
+                        <h2 class="subheading">Three common use cases demistyified.</h2>
+
+                        <span class="meta">Posted by Ali on 10/11/2015</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <p>
+    As new programmers, there is one thing we can all agree on: Regual Expressions are scaaarrreee....
+    Actually, the notation is anything but pretty, but the basic syntax is pretty straightforward.
+    Below I'll cover three very basic uses of Regular Expressions using Ruby.
+    </p>
+    <p>
+    <h4>Substitutions</h4>
+    <p>
+    Regular Expressions are ideal for making substitutions within strings. Let's say we have the following string:
+    </p>
+
+   <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">a <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;doohickeses is the password&quot;</span>
+</pre></div>
+
+    <p>
+    but someone leaked the password and now we need to change it to something more secure: stickywicketisntcricket.
+    </p>
+    <p>
+    We'll use the <strong>#sub </strong> method to swap out the two passwords using regular expressions.
+    We know that doohicikeses occupies the first 12 characters of our string. In order to pinpoint these first 12 characters using
+    regular expressions, we will need three symbols:
+    <ul>
+      <li>an opening <strong>/</strong> and a closing <strong>/</strong> which enclose all of our regular expressions</li>
+      <li>the carrot A.K.A. anchor <strong>^</strong> (located above the 6 key), to indicate where to start the scan</li>
+      <li>dot(s) <strong>.</strong> which represent characters in our string</li>
+    </ul>
+    </p>
+    <p>
+      Here is what the code looks like:
+    </p>
+    <p>
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">a <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;doohickeses is the new password&quot;</span>
+
+a<span style="color: #333333">.</span>sub(<span style="color: #000000; background-color: #fff0ff">/^............/</span>, <span style="background-color: #fff0f0">&quot;stickywicketisntcricket &quot;</span>)
+</pre></div>
+
+    </p>
+    <p>
+    </p>
+    <h4>Extracting Numbers from Strings</h4>
+    <p>
+    Let's say you wanted to extract only the digits from a string.
+     <ul>
+       <li>once again you'll need <strong>\</strong> to offset what you'll be searching for</li>
+       <li>and <strong> d </strong> for digtits</li>
+       <li>you'll also most likely need the <strong> + </strong> sign to signify we'll be looking for any number of joining digits, not just single digits</li>
+     </ul>
+    </p>
+    <p>
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">x <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;What&#39;s the deal with the elevator skipping floor 13?&quot;</span>
+x<span style="color: #333333">.</span>scan(<span style="color: #000000; background-color: #fff0ff">/\d+/</span>) {<span style="color: #333333">|</span>y<span style="color: #333333">|</span> <span style="color: #007020">puts</span> y}
+</pre></div>
+
+    </p>
+    <p>
+     Ouput:
+
+     <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #0000DD; font-weight: bold">13</span>
+</pre></div>
+    </p>
+    <p>
+    Let's say you have a website that requires users to enter their names and you want to throw an error message
+     if they enter any numbers in their name. You'll need the following symbols:
+    </p>
+    <h4>Character Classes (Groups and Ranges)</h4>
+    <p>
+    You can use bracket notation to include ranges of numbers and letters to be scanned:
+    </p>
+    <p>
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">c <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Now, why you would ever want to take out letters a through g out of a perfectly good sentence like this one?&quot;</span>
+c<span style="color: #333333">.</span>scan(<span style="color: #000000; background-color: #fff0ff">/[a-g]/</span>)
+</pre></div>
+
+    </p>
+    <p>
+      Output:
+
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333333">[</span><span style="background-color: #fff0f0">&quot;d&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;a&quot;</span>, <span style="background-color: #fff0f0">&quot;a&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;a&quot;</span>, <span style="background-color: #fff0f0">&quot;g&quot;</span>, <span style="background-color: #fff0f0">&quot;g&quot;</span>, <span style="background-color: #fff0f0">&quot;f&quot;</span>, <span style="background-color: #fff0f0">&quot;a&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;f&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;c&quot;</span>, <span style="background-color: #fff0f0">&quot;g&quot;</span>, <span style="background-color: #fff0f0">&quot;d&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;c&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span>, <span style="background-color: #fff0f0">&quot;e&quot;</span><span style="color: #333333">]</span>
+</pre></div>
+    </p>
+    <p>
+      Above I used the <strong>=~</strong> symbols, but you could also use the <strong> #match </strong> method:
+    </p>
+    <p>
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">name</span> <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Ali50&quot;</span>
+<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;Name cannot contain numbers&quot;</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">name</span><span style="color: #333333">.</span>match(<span style="color: #000000; background-color: #fff0ff">/[a-z]/</span>)
+</pre></div>
+
+    </p>
+    <p>
+      Output:
+    </p>
+    <p>
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #003366; font-weight: bold">Name</span> cannot contain numbers
+</pre></div>
+    </p>
+
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Ali Lyons 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
