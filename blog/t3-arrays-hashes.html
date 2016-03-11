@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+  <title>Ali Lyons Blog</title>
+  <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="blog-posts-stylesheet.css">
+</head>
+
+<main>
+<div class="container">
+  <h1>Arrays versus Hashes</h1>
+  <!--<h2>The subtitle, if you want it</h2>-->
+  <h4>08/16/2015</h4>
+
+  <section>
+    <p>
+    Both arrays and hashes store values that can be accessed by the user as well as other Ruby programs. Arrays store these values via an index starting at 0. Hashes are a bit more versatile in that they store key, value pairs where the keys can be any Ruby object of your choosing. Both have advantages and drawbacks, and one may be more suited than the other depending on your goals.
+    </p>
+    <p>
+    Arrays are ideal if you need to store values in an ordered list. Ruby will take the items in the array and assign numbers to 
+    them starting with 0 (not 1!). The first item can be retrieved using the following: array_name[0]. If you don't know how many 
+    numbers are in the array but you need to access the last item, Ruby allows you to access it via: array_name[-1]. Arrays also take 
+    many methods, allowing for adding, deleting, and iterating through each item in the array. There are <a href="http://www.tutorialspoint.com/ruby/ruby_arrays.htm">73</a> total array methods.
+    </p>
+    Hashes use key, value pairs where they key can be any object type you assign to it, i.e., "name" => "Ali". Some examples of key, value
+    pairs you might use a hash for are: states and their abbreviations, vocabulary words and their definitions or titles of people at a 
+    company. You can see in the last example how easy it would be to access the value of a certain position (key) and update the name of the 
+    new employee (value). Although hashes allow for more flexibility than an array, one has to be careful not to accidentally overwrite a key. While
+    a key can have more than one value assigned to it, each key must be unique, and Ruby will replace any existing keys with the latest
+    value assigned.
+    <p>
+      
+    </p>
+
+      <!-- copy and paste as many sections as you want to add paragraphs -->
+  </section>
+  </div>
+</main>
+
