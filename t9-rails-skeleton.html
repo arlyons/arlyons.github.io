@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rails Skeleton</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar">HERE I AM!!!</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Ali Lyons</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/Brooklyn_Bridge1/Brooklyn_Bridge1.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Rails Skeleton</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                  <p>
+                   I'm going to go step-by-step through setting up a new Rails App configured for:
+                   <ul class="list-unstyled">
+                       <li>
+                           <a href="http://getbootstrap.com">Bootstrap: as the HTML, CSS and JS framework</a>
+                       </li>
+                       <li>
+                           <a href="https://getsimpleform.com/">Simple Forms: for my forms</a>
+                       </li>
+                       <li>
+                           <a href="https://github.com/plataformatec/devise">Devise: for the user model</a>
+                       </li>
+                       <li>
+                           <a href="https://www.heroku.com">Heroku: for the server</a>
+                       </li>
+                   </ul>
+                  </p>
+
+                  <h2>Adding Gems and Setting Up Bootstrap</h2>
+
+                  <h3>Step One: Create a New App</h3>
+                  <p>From your terminal, CD to your directory of choice and enter the commands <span class="commands">rails new [app name]</span>
+                  </p>
+                  <hr>
+                  <img class="image-responsive" src="img/rails_new_app.png">
+                  I called mine skeleton because this will serve as a template I'll resuse.</p>
+
+                  <h3>Step Two: Add and Remove Some Gems</h3>
+                  <p>In your Gemfile, remove the Sqlite3 gem as well as the Turbolinks gem. (Also remove the line //= require turbolinks from your <span class="paths"> app/assets/javascripts/application.js </span> file), and add the following gems along with your current version of Ruby.
+                    <ul class="list-unstyled">
+                        <li>ruby '2.2.1'</li>
+                        <li>gem 'sqlite3', group: [:development, :test]</li>
+                        <li>gem 'pg', group: :production</li>
+                        <li>gem 'rails_12factor', group: :production</li>
+                        <li>gem 'devise'</li>
+                        <li>gem 'twitter-bootstrap-rails'</li>
+                        <li>gem 'simple_form', '~> 3.0.0.rc'</li>
+                    </ul>
+                  </p>
+
+
+
+                  <h3>Step Three: Bundle Install</h3>
+                    <p>Like you always do when you add a new gem.
+                  <hr>
+                      <img class="image-responsive" src="img/bundle_instal.png">
+                  </p>
+
+                  <h3>Step Four: Create a Root Path</h3>
+                    <p>You'll have to do so at some point, so let's get that out of the way. My "skeleton" app will primarily serve as a template for the user model, so I'm going to temporarily set it to <span class="commands">root 'users#index'</span> which I'll change later.
+                  </p>
+
+                  <hr>
+                  <img class="image-responsive" src="img/root_route.png">
+
+                  <h3>Step Five: Run the Bootsrap Generator</h3>
+                    <p>Now we're going to Boostrapify our app. We'll run the Bootstrap Generator using the following command: </p>
+                    <hr>
+                      <img class="image-responsive" src="img/rails_bootstrap_generator.png">
+
+                    <h3>Step Five: Generate a New Layout File</h3>
+                      <p>We'll need to override our existing layout, which means we'll need to at <span class="commands">-f</span> to the end of your command. </p>
+                    <hr>
+                      <img class="image-responsive" src="img/generate_layout.png">
+
+                    <h3>Step Five.One: Install Simple Form</h3>
+                    <hr>
+                      <img class="image-responsive" src="img/install_simple_form.png">
+
+                  <h3>Step Six: Create a User Model with Scaffold.</h3>
+                    <p>I know, I know, using scaffold is no bueno. But this will get us up and running quickly just to see how these different gems work together. We can edit later.</p>
+                    <hr>
+                      <img class="image-responsive" src="img/scaffold.png">
+                    <p>We're leaving this model empty because Devise will fill these in for us.</p>
+
+                    <p>Run your new migration file: </p>
+                    <hr>
+                      <img class="image-responsive" src="img/migrate.png">
+
+                    <p>Just like we did with the layout, it's time to Bootstrapify our new model: </p>
+                    <hr>
+                    <img class="image-responsive" src="img/boostrap_themed.png">
+
+                  <H2>Setting Up Devise</H2>
+
+                  <H3>Step Seven: First, you gotta install it: </H3>
+                  <hr>
+                  <img class="image-responsive" src="img/install_devise.png">
+
+                  <H3>Step Eight: Follow Devise's Instructions</H3>
+                  <p>Once installed, Devise prompts you to take five more steps but we only have to worry about the following three (unless you're running Rails 3.2): </p>
+
+                  <ol>
+                    <li>Configure your Default URL: </li>
+                    <ul>
+                      <li class="non-bullet">In the <code class="paths"> config/environments/development.rb</code> file, paste the following: </li>
+
+                          <li class="non-bullet">config.action_mailer.default_url_options = { :host => 'localhost:3000' }</li>
+                      </ul>
+                    </li>
+
+                    <li>Add Flash Messages:
+                    In <pre class="paths">app/views/layouts/application.html.erb</pre> file, paste the following inside the <pre class="paths">&lt;body&gt;</pre> tags:
+                    <p>
+                       <script src="https://gist.github.com/arlyons/4815704ccccb85ddf605.js"></script>
+                    </p>
+                  </ol>
+
+                    <h3>Step Nine: Add Devise Views</h3>
+                    <hr>
+                    <img class="image-responsive" src="img/devise_views.png">
+                    <p>Now you should see a nice big Devise directory with a whole mess of subfolders that you can customize later.</p>
+
+
+                    <h3>Step Ten: Configure Your Existing User Model with Devise</h3>
+                    <hr>
+                    <img class="image-responsive" src="img/devise_user.png">
+                    <p>Devise will be able to add to your existing model you generated with scaffold. Don't forget to migrate:  </p>
+                    <hr>
+                    <img class="image-responsive" src="img/rake_db_migrate.png">
+
+                    <h3>Step Eleven: Add Partials and Sign-In/Sign-Out Links</H3>
+                    <p>In the Devise Folder, create a sub folder named <span class="commands"> menu </span> and a new partial file <span class="commands">_login_items.html.erb</span>
+
+                    <p>The full path: <code class="paths"> app/views/devise/menu/_login_items.html.erb</code> </p>
+                    <p>Do the same for <span class="commands">registration</span></p>
+                    <p>The full path: <code class="paths"> app/views/devise/menu/_registration_items.html.erb</code> </p>
+                    <p>Add the following code to each respectively: </p>
+
+                    <script src="https://gist.github.com/arlyons/ffdb0c29cbd8243c91f1.js"></script>
+                    <hr>
+                    <script src="https://gist.github.com/arlyons/d8c87be5b6a81fe3cc66.js"></script>
+
+                    <h3>Step 12: Add Home, Login and Logout Paths to Layout</h3>
+                    <p>Swap out the placehoders with the following code: </p>
+                    <hr>
+                    <script src="https://gist.github.com/arlyons/9ff9d4e84a32223acf4f.js"></script>
+
+                    <h3>Step 13: Reformat Simple Forms</h3>
+                    <p>Back when we installed it, Simple Forms gave us instructions for integrating with Bootstrap</p>
+                    <hr>
+                    <img class="image-responsive" src="img/simple_form_instructions.png">
+                    <p>So we'll go into the appropriate new views and swap out: </p>
+                    <hr>
+                    <script src="https://gist.github.com/arlyons/23126aa035f8657bebbb.js"></script>
+                    <p>With the following code: </p>
+                    <hr>
+                    <script src="https://gist.github.com/arlyons/32c305143330a28347f7.js"></script>
+                    <p>Note: The instructions confusingly state <code class="code">|form|</code> instead of<code class="code"> |f| </code>. I opted for <code class="code">'form-horizontal'</code> but obvisously you can use other Bootstrap classes. </p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://www.facebook.com/ali.lyons.908">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Ali Lyons 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
