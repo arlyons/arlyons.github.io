@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title></title>
+    <title>Rails App III</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -87,14 +87,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>In my <a href="t10-rails-app-part-2.html">last post</a> we added the models for our app. Let's keep building: </p>
                   <h3>Revise our 'snippets_controller' methods: </h3>
-                  <p>Since our 'Snippet model' belongs to our 'User' model, we'll need to use <code>build</code> when defining our snippet instance varialbe in our 'snippets_controller' file.</p>
+                  <p>Since our 'Snippet model' belongs to our 'User' model, we'll need to use <code>build</code> when defining our snippet instance variable in our 'snippets_controller' file.</p>
                   <ol>
                       <li>In our 'new' method, replace: </li>
                       <p><code>@snippet = Snippet.new</code></p>
                       <p>With the line: </p>
                       <p><code>@snippet = current_user.snippets.build</code></p>
-                      <li>In our 'create' method, reaplce: </li>
+                      <li>In our 'create' method, replace: </li>
                       <p><code> @snippet = Snippet.new(snippet_params)</code></p>
                       <p>With the line: </p>
                       <p><code>@snippet = current_user.snippets.build(snippet_params)</code></p>
@@ -118,11 +119,7 @@
                             <li><code><% end %></code></li>
                       </ol>
                 </ol>
-                <p>Now our "snippets" can only be created by a logged-in user, and only the owners of that snippet are able to edit and delete them. We're one crucial step closer to making our app CRUD, but these views still need a lot of love to look respetable.</p>
-                <p>Here is a list of actions our views need. I won't go into detail because you can easily navigate this on your own. </p>
-                <ol>
-                    <li>Remove the code that is displaying our user instances in our snippets views</li>
-                </ol>
+                <p>Now our "snippets" can only be created by a logged-in user, and only the owners of that snippet are able to edit and delete them. We're one crucial step closer to making our app CRUD. </p>
                 </div>
             </div>
         </div>
