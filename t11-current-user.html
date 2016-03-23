@@ -103,7 +103,7 @@
                 <h3>Restrict 'Edit' and 'Destroy' actions to signed-in users</h3>
                 <ol>
                     <li>Add the following code at the top of the 'snippet_controller' page: </li>
-                    <p><code>before_action :authenticate_user!, except: [:index, :show]</code></p>
+                    <p><code>before_action :authenticate_user!</code></p>
                     <li>In our 'snippets_index.html.erb' view file, add the following <strong>if statement</strong> inside our <code>td</code> tags at the bottom or our form: </li>
                    <p>Replcace: <code><td><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></td></code></p>
                    <p>With: </p>
