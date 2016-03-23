@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Add Snippets Logic</title>
+    <title></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -74,8 +74,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Add Snippets Logic</h1>
-                        <h2 class="subheading">Add the methods that will be the meat of our app</h2>
+                        <h1>Add Snippet Methods</h1>
+                        <h2 class="subheading">Adding the main logic to get our app crudding</h2>
                     </div>
                 </div>
             </div>
@@ -88,9 +88,12 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-                  <p>Let's continue getting our spiffy app, "Syntax Driller", to CRUD. While you were gone, I made a bunch of changes that don't warrant detailing. I cleaned up my views a bit and deleted some unnecessary files that were automatically generated when we used the <code>rails scaffold</code> method. </p>
+                  <p>Continuing from my <a href="t11-current-user.html">last post</a>, we'll be adding some methods to our "Snippet" model that will serve as the main bit of logic to get our app, "Syntax Driller", crudding. This is a very straightforward app that checks to see if you've correctly entered a code snippet of your choosing. </p>
 
-                  <p>The heart of this app is a very simple method that checks user input against the snippets and returns any errors. </p>
+                  <p>While you were gone, I tweaked the views to make them nicer to look at. Nothing worth detailing, just basic stuff. </p>
+
+                  <p>First, we'll need to create a form to capture our guesses. This will be an instance of the "Guess" model. We'll put this form at the bottom of the show view for our Snippet. </p>
+
 
 
                 </div>
