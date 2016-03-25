@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>In my <a href="t10-rails-app-part-2.html">last post</a> we added the resources for our app. Let's keep building: </p>
-                  <h3>Revise our 'snippets_controller' methods: </h3>
+                  <h3>Set Up Your Associations </h3>
                   <p>Since our 'Snippet model' belongs to our 'User' model, we'll need to use <code>build</code> when defining our snippet instance variable in our 'snippets_controller' file.</p>
                   <ol>
                       <li>In our 'new' method, replace: </li>
@@ -99,24 +99,18 @@
                       <p><code> @snippet = Snippet.new(snippet_params)</code></p>
                       <p>With the line: </p>
                       <p><code>@snippet = current_user.snippets.build(snippet_params)</code></p>
+                      <li><p>Add the following association to your User model: </p></li>
+                      <p><code>has_many :snippets, dependent: :destroy</code></p>
                   </ol>
                 <h3>Restrict 'Edit' and 'Destroy' actions to signed-in users</h3>
                 <ol>
                     <li>Add the following code at the top of the 'snippet_controller' page: </li>
                     <p><code>before_action :authenticate_user!</code></p>
-                    <li>In our 'snippets_index.html.erb' view file, add the following <strong>if statement</strong> inside our <code>td</code> tags at the bottom or our form: </li>
-                   <p>Replcace: <code><td><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></td></code></p>
-                   <p>With: </p>
+                    <li>In our 'snippets/index.html.erb' view file, add the following <strong>if statement</strong> inside our <code>td</code> tags at the bottom or our form: </li>
                       <ol>
-                           <li><code><% if snippet.user == current_user %></code></li>
-                           <li><code><%= link_to t('.edit', :default => t("helpers.links.edit")),
-                            edit_snippet_path(snippet), :class => 'btn btn-default btn-xs' %></code></li>
-                           <li><code><%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                            snippet_path(snippet),
-                            :method => :delete,
-                            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                            :class => 'btn btn-xs btn-danger' %></code></li>
-                            <li><code><% end %></code></li>
+                        <li><code><% if snippet.user == current_user %></code></li>
+                        <li><code>[links to show, edit, destroy paths]</code></li>
+                        <li><code><% end %></code></li>
                       </ol>
                 </ol>
                 <p>Now our "snippets" can only be created by a logged-in user, and only the owners of that snippet are able to edit and delete them. We're one crucial step closer to making our app CRUD. </p>
