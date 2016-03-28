@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Rails APP Part II</title>
+    <title>Rails App Part IV</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar">HERE I AM!!!</span>
+                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
@@ -74,8 +74,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Rails App Part II</h1>
-                        <h2 class="subheading">Creating our resources with the Rails scaffold command.</h2>
+                        <h1>Rails App Part IV</h1>
+                        <h2 class="subheading">Adding a nested resource.</h2>
                     </div>
                 </div>
             </div>
@@ -87,46 +87,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                  <p>Using the <a href="t9-rails-skeleton.html"> Rails Skeleton</a> I configured for Devise, Simple Forms, Bootstrap, and Heroku, I'm going build a new app. This app is called Syntax Driller and it is a very simple app that let's you plug in code and see if you can memorize it.</p>
-                  <ol>
-                      <p>My app will have 5 models: </p>
-                          <li>User: which we already have as part of our template </li>
-                          <li>Snippet: which will hold the code snippets we want to memorize</li>
-                          <li>Guess: which will hold the user input </li>
-                          <li>Mistakes: to track the mistakes we made </li>
-                          <li>Group: to organize our different snippets, say by language </li>
-                  </ol>
-                  <p>Following is a schema for my app: </p>
-                  <hr>
-                  <img src="img/syntax_driller/schema-resized.png">
-                  <hr>
-                  <p>I'm going to use the <code>Rails g scaffold</code> command to get this show on the road. I'll remove unnecessary files later on. Following are the commands for each of the resources above (except for User, which was already in my skeleton).</p>
-                  <hr>
-                  <ol>
-                      <li><code>rails g scaffold Snippet body:text user:references</code></li>
-                      <li><code>rails g scaffold Guess body:text snippet:references</code></li>
-                      <li><code>rails g scaffold Mistake body:text guess:references</code></li>
-                      <li><code>rails g scaffold Group name:string user:references</code></li>
-                  </ol>
-                  <p>You'll see a whole mess of files in your app now for the models, views, tests and migrations for our resources. Speaking of migrations, our next step is to run them with the following command: </p>
-                  <p><code>bin/rake db:migrate</code></p>
-                  <p>We'll also want to create the <a href="t9-rails-skeleton.html#bootstrapify">Bootstrap themes</a> for each of these as well. </p>
-                  <p>Run your rails server <code>rails s</code> to checkout the views for your recsources. We'll make them pretty later, but for right now, let's get this puppy crudding. First step is to open the console and start creating some records. Type <code>rails c</code> to open your console. </p>
-                  <p>Let's see if we can create a snippet tied to a user with the following: </p>
-                  <p>I have a couple of user records already from my template. Here I'll assign the first record to the variable "ali":
-                      <ul>
-                        <li><code>ali = User.find(1)</code></p></li>
-                        <p>Then I'll create a snippet tied to user "ali"</p>
-                        <li><code>ali.snippets.create(body: "I am the first snippet"</code></li>
-                        <p>I get an error message: <code>NoMethodError: undefined method `snippets' for #<User:0x007fbcc0843030></code> because I forgot to include the appropriate associations in my existing user model.</p>
-                        <p>Let's add the following associations to our User model: </p>
-                        <li><code>has_many :snippets, dependent: :destroy</code></li>
-                        <li><code>has_many :groups, dependent: :destroy</code></li>
-                        <p>The line <code>dependent: :destroy</code> ensures that when a user record is destroyed, all of their snippets and groups will be destroyed as well.</p>
-                        <p>Now when you create a snippet for user "ali" it should work.</p>
-                      </ul>
-                    <p>That's a pretty good start to our app. I'm going to change our root route from the placeholder of <code>root 'users#index'</code> to <code>root 'snippets#index'</code>.
-                    There is a lot left to do to get this app crudding and next we'll tackle associating our current user with the snippets online.</p>
+
+                  <p>Now that a logged-in user can create a new "Snippet", lets add the functionality of entering a guess. The "Guess" resource is nested inside "Snippet." We'll need to add the code inside the snippet resources in the <code>/config/routes.rb</code></p>
+
+                  <img src="img/syntax_driller/guesses_routes.png">
+
+                  <p>We'll also want to add the association to our "Snippet" model</p>
+                  <p><code>has_many :guesses, dependent: :destroy</code></p>
+
+
                 </div>
             </div>
         </div>
