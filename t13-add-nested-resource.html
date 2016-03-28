@@ -90,7 +90,7 @@
 
                   <p>Now that a logged-in user can create a new "Snippet", lets add the functionality of entering a guess. The "Guess" resource is nested inside "Snippet." We'll need to add the code inside the snippet resources in the <code>/config/routes.rb</code></p>
 
-                  <img src="img/syntax_driller/guesses_routes.png">
+                  <img src="img/syntax_driller/guesses_routes.png" alt="routes screen shot">
 
                   <p>We'll also want to add the association to our "Snippet" model</p>
                   <p><code>has_many :guesses, dependent: :destroy</code></p>
