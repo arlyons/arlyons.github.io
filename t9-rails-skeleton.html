@@ -111,7 +111,7 @@
                   <p>From your terminal, CD to your directory of choice and enter the commands <strong>rails new [app name]</strong>
                   </p>
                   <hr>
-                  <img class="image-responsive" src="img/rails_new_app.png">
+                  <img class="image-responsive" src="img/rails_new_app.png" alt="rails new skeleton screenshot">
                   I called mine skeleton because this will serve as a template I'll resuse.</p>
 
                   <h3>Step Two: Add and Remove Some Gems</h3>
@@ -132,7 +132,7 @@
                   <h3>Step Three: Bundle Install</h3>
                     <p>Like you always do when you add a new gem.
                   <hr>
-                      <img class="image-responsive" src="img/bundle_instal.png">
+                      <img class="image-responsive" src="img/bundle_instal.png" alt="bundle install screen shot">
                   </p>
 
                   <h3>Step Four: Create a Root Path</h3>
@@ -140,41 +140,41 @@
                   </p>
 
                   <hr>
-                  <img class="image-responsive" src="img/root_route.png">
+                  <img class="image-responsive" src="img/root_route.png" alt="root route screen shot">
 
                   <h3>Step Five: Run the Bootstrap Generator</h3>
                     <p>Now we're going to Boostrapify our app. We'll run the Bootstrap Generator using the following command: </p>
                     <hr>
-                      <img class="image-responsive" src="img/rails_bootstrap_generator.png">
+                      <img class="image-responsive" src="img/rails_bootstrap_generator.png" alt="bootstrap generator screenshot">
 
                     <h3>Step Five: Generate a New Layout File</h3>
                       <p>We'll need to override our existing layout, which means we'll need to at <span class="commands">-f</span> to the end of your command. </p>
                     <hr>
-                      <img class="image-responsive" src="img/generate_layout.png">
+                      <img class="image-responsive" src="img/generate_layout.png" alt="generate layout screenshot">
 
                     <h3>Step Five.One: Install Simple Form</h3>
                     <hr>
-                      <img class="image-responsive" src="img/install_simple_form.png">
+                      <img class="image-responsive" src="img/install_simple_form.png" alt="install simple form screen shot">
 
                   <h3>Step Six: Create a User Model with Scaffold.</h3>
                     <p>I know, I know, using scaffold is no bueno. But this will get us up and running quickly just to see how these different gems work together. We can edit later.</p>
                     <hr>
-                      <img class="image-responsive" src="img/scaffold.png">
+                      <img class="image-responsive" src="img/scaffold.png" alt="scaffold command screenshot">
                     <p>We're leaving this model empty because Devise will fill these in for us.</p>
 
                     <p>Run your new migration file: </p>
                     <hr>
-                      <img class="image-responsive" src="img/migrate.png">
+                      <img class="image-responsive" src="img/migrate.png" alt="migrate command screen shot">
 
                     <p>Just like we did with the layout, it's time to Bootstrapify our new model: </p>
                     <hr>
-                    <img id="bootstrapify" class="image-responsive" src="img/boostrap_themed.png">
+                    <img id="bootstrapify" class="image-responsive" src="img/boostrap_themed.png" alt="bootstrap themed screen shot">
 
                   <H2>Setting Up Devise</H2>
 
                   <H3>Step Seven: First, you gotta install it: </H3>
                   <hr>
-                  <img class="image-responsive" src="img/install_devise.png">
+                  <img class="image-responsive" src="img/install_devise.png" alt="install devise screenshot">
 
                   <H3>Step Eight: Follow Devise's Instructions</H3>
                   <p>Once installed, Devise prompts you to take five more steps but we only have to worry about the following three (unless you're running Rails 3.2): </p>
@@ -197,23 +197,23 @@
 
                     <h3>Step Nine: Add Devise Views</h3>
                     <hr>
-                    <img class="image-responsive" src="img/devise_views.png">
+                    <img class="image-responsive" src="img/devise_views.png" alt="devise views screen shot">
                     <p>Now you should see a nice big Devise directory with a whole mess of sub-folders that you can customize later.</p>
 
 
                     <h3>Step Ten: Configure Your Existing User Model with Devise</h3>
                     <hr>
-                    <img class="image-responsive" src="img/devise_user.png">
+                    <img class="image-responsive" src="img/devise_user.png" alt="generate devise command screenshot">
                     <p>Devise will be able to add to your existing model you generated with scaffold. Don't forget to migrate:  </p>
                     <hr>
-                    <img class="image-responsive" src="img/rake_db_migrate.png">
+                    <img class="image-responsive" src="img/rake_db_migrate.png" >
 
                     <h3>Step Eleven: Add Partials and Sign-In/Sign-Out Links</H3>
                     <p>In the Devise Folder, create a sub folder named <span class="commands"> menu </span> and a new partial file <span class="commands">_login_items.html.erb</span>
 
-                    <p>The full path: <code class="paths"> app/views/devise/menu/_login_items.html.erb</code> </p>
-                    <p>Do the same for <span class="commands">registration</span></p>
-                    <p>The full path: <code class="paths"> app/views/devise/menu/_registration_items.html.erb</code> </p>
+                    <p>The full path: <code> app/views/devise/menu/_login_items.html.erb</code> </p>
+                    <p>Do the same for <strong>registration</strong></p>
+                    <p>The full path: <code> app/views/devise/menu/_registration_items.html.erb</code> </p>
                     <p>Add the following code to each respectively: </p>
 
                     <script src="https://gist.github.com/arlyons/ffdb0c29cbd8243c91f1.js"></script>
@@ -228,14 +228,14 @@
                     <h3>Step 13: Reformat Simple Forms</h3>
                     <p>Back when we installed it, Simple Forms gave us instructions for integrating with Bootstrap</p>
                     <hr>
-                    <img class="image-responsive" src="img/simple_form_instructions.png">
+                    <img class="image-responsive" src="img/simple_form_instructions.png" alt="simple form instructions screen shot">
                     <p>So we'll go into the appropriate new views and swap out: </p>
                     <hr>
                     <script src="https://gist.github.com/arlyons/23126aa035f8657bebbb.js"></script>
                     <p>With the following code: </p>
                     <hr>
                     <script src="https://gist.github.com/arlyons/32c305143330a28347f7.js"></script>
-                    <p>Note: The instructions confusingly state <code class="code">|form|</code> instead of<code class="code"> |f| </code>. I opted for <code class="code">'form-horizontal'</code> but obviously you can use other Bootstrap classes. </p>
+                    <p>Note: The instructions confusingly state <code>|form|</code> instead of<code> |f| </code>. I opted for <code>'form-horizontal'</code> but obviously you can use other Bootstrap classes. </p>
 
                 </div>
             </div>
