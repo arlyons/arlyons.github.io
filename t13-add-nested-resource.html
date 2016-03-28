@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CSS IDs Vs. Classes</title>
+    <title>Rails App Part IV</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -45,7 +46,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Ali Lyons</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -69,15 +69,13 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/Brooklyn_Bridge1/Brooklyn_Bridge1.jpg'')">
+    <header class="intro-header" style="background-image: url('img/Brooklyn_Bridge1/Brooklyn_Bridge1.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>CSS IDs Vs. Classes</h1>
-                        <h2 class="subheading">What's the difference</h2>
-
-                        <span class="meta">Posted by Ali on 08/10/2015</span>
+                        <h1>Rails App Part IV</h1>
+                        <h2 class="subheading">Adding a nested resource.</h2>
                     </div>
                 </div>
             </div>
@@ -90,21 +88,14 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-                    <p>
-                    The concept of classes and IDs in CSS is a bit confusing because they do exactly the same thing, so their use can seem
-                    interchangeable. To make matters more confusing you will often see classes and IDs used together on the same element. I'm going to try to
-                    explain their appropriate uses here.
+                  <p>Now that a logged-in user can create a new "Snippet", lets add the functionality of entering a guess. The "Guess" resource is nested inside "Snippet." We'll need to add the code inside the snippet resources in the <code>/config/routes.rb</code></p>
 
-                    </p>
-                    <p>
-                    Classes can (and should) be created once and used over and over for a number of different elements that share the same styling. IDs on the other hand
-                    are to be used for unique elements (a sidebar is a great example because most websites only have one) that will not share
-                    specific stying with any other elements on the page. Additionally, each page is limited to one element with a specific ID. (If you use more than one, it will be caught in a validator.)
-                   </p>
-                   <p>
-                    Chris Coyer uses a great analogy in this <a href="https://css-tricks.com/the-difference-between-id-and-class/">article</a> classes are like bar codes and IDs are like serial numbers. If you need to make a broad sweeping change to the style of a page, you can do so by updating the class, much like updating a price in a bar code will change all of the products with that bar code. Whereas a change to an ID, will affect a specific, unique element
-                    on your page only.
-                   </p>
+                  <img src="img/syntax_driller/guesses_routes.png">
+
+                  <p>We'll also want to add the association to our "Snippet" model</p>
+                  <p><code>has_many :guesses, dependent: :destroy</code></p>
+
+
                 </div>
             </div>
         </div>
@@ -119,7 +110,15 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="https://www.facebook.com/ali.lyons.908">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
