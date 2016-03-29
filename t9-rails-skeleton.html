@@ -86,9 +86,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-                  <p>
-                   I'm going to go step-by-step through setting up a new Rails App configured for:
+                  <p>I'm going to go step-by-step through setting up a new Rails App configured for:  </p>
                    <ul class="list-unstyled">
                        <li>
                            <a href="http://getbootstrap.com">Bootstrap: as the HTML, CSS and JS framework</a>
@@ -103,7 +101,7 @@
                            <a href="https://www.heroku.com">Heroku: for the server</a>
                        </li>
                    </ul>
-                  </p>
+
 
                   <h2>Adding Gems and Setting Up Bootstrap</h2>
 
@@ -112,11 +110,10 @@
                   </p>
                   <hr>
                   <img class="image-responsive" src="img/rails_new_app.png" alt="rails new skeleton screenshot">
-                  I called mine skeleton because this will serve as a template I'll resuse.</p>
-
+                  I called mine skeleton because this will serve as a template I'll resuse.
                   <h3>Step Two: Add and Remove Some Gems</h3>
-                  <p>In your Gemfile, remove the Sqlite3 gem as well as the Turbolinks gem. (Also remove the line //= require turbolinks from your <span class="paths"> app/assets/javascripts/application.js </span> file), and add the following gems along with your current version of Ruby.
-                    <ul class="list-unstyled">
+                  <p>In your Gemfile, remove the Sqlite3 gem as well as the Turbolinks gem. (Also remove the line //= require turbolinks from your <span class="paths"> app/assets/javascripts/application.js </span> file), and add the following gems along with your current version of Ruby.  </p>
+                    <ul class="non-bullet">
                         <li>ruby '2.2.1'</li>
                         <li>gem 'sqlite3', group: [:development, :test]</li>
                         <li>gem 'pg', group: :production</li>
@@ -125,16 +122,14 @@
                         <li>gem 'twitter-bootstrap-rails'</li>
                         <li>gem 'simple_form', '~> 3.0.0.rc'</li>
                     </ul>
-                  </p>
+
 
 
 
                   <h3>Step Three: Bundle Install</h3>
-                    <p>Like you always do when you add a new gem.
+                    <p>Like you always do when you add a new gem.</p>
                   <hr>
                       <img class="image-responsive" src="img/bundle_instal.png" alt="bundle install screen shot">
-                  </p>
-
                   <h3>Step Four: Create a Root Path</h3>
                     <p>You'll have to do so at some point, so let's get that out of the way. My "skeleton" app will primarily serve as a template for the user model, so I'm going to temporarily set it to <strong>root 'users#index'</strong> which I'll change later.
                   </p>
@@ -178,22 +173,14 @@
 
                   <H3>Step Eight: Follow Devise's Instructions</H3>
                   <p>Once installed, Devise prompts you to take five more steps but we only have to worry about the following three (unless you're running Rails 3.2): </p>
+                  <p>Configure your Default URL:
+                  In the <code class="paths"> config/environments/development.rb</code> file, paste the following:
+                  <code>config.action_mailer.default_url_options = { :host => 'localhost:3000' }</code></p>
 
-                  <ol>
-                    <li>Configure your Default URL: </li>
-                    <ul>
-                      <li class="non-bullet">In the <code class="paths"> config/environments/development.rb</code> file, paste the following: </li>
+                  <p>Add Flash Messages: In the: <pre class="paths">app/views/layouts/application.html.erb</pre> file, paste the following inside the <pre class="paths">&lt;body&gt;</pre> tags:
+                  <script src="https://gist.github.com/arlyons/4815704ccccb85ddf605.js"></script>
 
-                          <li class="non-bullet">config.action_mailer.default_url_options = { :host => 'localhost:3000' }</li>
-                      </ul>
-                    </li>
 
-                    <li>Add Flash Messages:
-                    In <pre class="paths">app/views/layouts/application.html.erb</pre> file, paste the following inside the <pre class="paths">&lt;body&gt;</pre> tags:
-                    <p>
-                       <script src="https://gist.github.com/arlyons/4815704ccccb85ddf605.js"></script>
-                    </p>
-                  </ol>
 
                     <h3>Step Nine: Add Devise Views</h3>
                     <hr>
@@ -206,7 +193,7 @@
                     <img class="image-responsive" src="img/devise_user.png" alt="generate devise command screenshot">
                     <p>Devise will be able to add to your existing model you generated with scaffold. Don't forget to migrate:  </p>
                     <hr>
-                    <img class="image-responsive" src="img/rake_db_migrate.png" >
+                    <img class="image-responsive" src="img/rake_db_migrate.png" alt="rake db migrate screen shot">
 
                     <h3>Step Eleven: Add Partials and Sign-In/Sign-Out Links</H3>
                     <p>In the Devise Folder, create a sub folder named <span class="commands"> menu </span> and a new partial file <span class="commands">_login_items.html.erb</span>
