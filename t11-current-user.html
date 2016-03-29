@@ -91,28 +91,32 @@
                   <h3>Set Up Your Associations </h3>
                   <p>Since our 'Snippet model' belongs to our 'User' model, we'll need to use <code>build</code> when defining our snippet instance variable in our 'snippets_controller' file.</p>
                   <ol>
-                      <li>In our 'new' method, replace: </li>
-                      <p><code>@snippet = Snippet.new</code></p>
-                      <p>With the line: </p>
-                      <p><code>@snippet = current_user.snippets.build</code></p>
-                      <li>In our 'create' method, replace: </li>
-                      <p><code> @snippet = Snippet.new(snippet_params)</code></p>
-                      <p>With the line: </p>
-                      <p><code>@snippet = current_user.snippets.build(snippet_params)</code></p>
-                      <li><p>Add the following association to your User model: </p></li>
-                      <p><code>has_many :snippets, dependent: :destroy</code></p>
+                      <li>In our 'new' method, replace:
+                      <code>@snippet = Snippet.new</code>
+                      <br>
+                      With the line:
+                      <code>@snippet = current_user.snippets.build</code></li>
+
+                      <li>In our 'create' method, replace:
+                      <br>
+                      <code> @snippet = Snippet.new(snippet_params)</code>
+                      With the line:
+                      <br>
+                      <code>@snippet = current_user.snippets.build(snippet_params)</code></li>
+                      <li>Add the following association to your User model:
+                      <code>has_many :snippets, dependent: :destroy</code> </li>
                   </ol>
                 <h3>Restrict 'Edit' and 'Destroy' actions to signed-in users</h3>
                 <ol>
-                    <li>Add the following code at the top of the 'snippet_controller' page: </li>
-                    <p><code>before_action :authenticate_user!</code></p>
+                    <li>Add the following code at the top of the 'snippet_controller' page:
+                    <code>before_action :authenticate_user!</code></li>
                     <li>In our 'snippets/index.html.erb' view file, add the following <strong>if statement</strong> inside our <code>td</code> tags at the bottom or our form: </li>
-                      <ol>
-                        <li><code><% if snippet.user == current_user %></code></li>
-                        <li><code>[links to show, edit, destroy paths]</code></li>
-                        <li><code><% end %></code></li>
-                      </ol>
                 </ol>
+                        <ul class="non-bullet">
+                            <li><code>&lt;% if snippet.user == current_user %></code></li>
+                            <li><code>[links to show, edit, destroy paths]</code></li>
+                            <li><code>&lt;% end %></code></li>
+                        </ul>
                 <p>Now our "snippets" can only be created by a logged-in user, and only the owners of that snippet are able to edit and delete them. We're one crucial step closer to making our app CRUD. </p>
                 </div>
             </div>
