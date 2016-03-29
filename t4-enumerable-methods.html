@@ -1,4 +1,4 @@
-f<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -76,7 +76,7 @@ f<!DOCTYPE html>
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
                         <h1>Ruby Enumerable Methods</h1>
-                        <h2 class="subheading">  </h2>
+                        <h2 class="subheading">A look at Ruby's group_by method</h2>
 
                         <span class="meta">Posted by Ali on 09/20/2015</span>
                     </div>
@@ -90,35 +90,31 @@ f<!DOCTYPE html>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                 <p>Ruby's group_by method transforms an array into a hash with key, value pairs
-                 that are dictated by a code block of your choosing. It's an extremely useful method
-                 best shown by example.
-                 </p>
-                 <p>
-                 Take an example of an array of names. Let's say you wanted to create plaques for each
-                 name and you were charged by the letter. But, if you can group names of the same size
-                 together, you will get a discount since the plaque maker can crank out a bunch of plaques
-                 using the same setting (economies of scale and all.)
-                </p>
-                 <p>
-                 Following is an array of names and the group_by method called on it:
-                <hr>
-                    <script src="https://gist.github.com/arlyons/1b7f6da1c537aa61ef72.js"></script>
+                     <p>Ruby's <code>group_by</code> method transforms an <strong>array</strong> into a <strong>hash</strong> with <strong>key-value pairs</strong>
+                     that are dictated by a code block of your choosing. It's an extremely useful method
+                     best shown by example.
+                     </p>
+                     <p>
+                     Take an example of an array of names. Let's say you wanted to create plaques for each
+                     name and you were charged by the letter. But, if you can group names of the same size
+                     together, you will get a discount since the plaque maker can crank out a bunch of plaques
+                     using the same setting (economies of scale and all.)
+                    </p>
+                     <p>
+                     Following is an array of names and the group_by method called on it:
+                    <hr>
+                        <script src="https://gist.github.com/arlyons/1b7f6da1c537aa61ef72.js"></script>
 
-                    <script src="https://gist.github.com/arlyons/ef091de0468c1fdbb3db.js"></script>
+                        <script src="https://gist.github.com/arlyons/ef091de0468c1fdbb3db.js"></script>
 
-                 It returns the following hash:
-                   <hr>
-                   <script src="https://gist.github.com/arlyons/be8d8bd77bbfeae60bda.js"></script>
-                 </p>
-                 <p>
-                 Ruby returns a hash with a key for each of the various name lengths. While the keys are unique (all hash keys are) many of the values
-                 (the names) share a key since they are the same length. With the money you save on grouping Lyons, Smith and Jones you might still be able to afford
-                 the Keihanaikukauakahihuliheekahaunaele plaque.
-                 </p>
-                 <p>
-                 Of course this hash could be further transformed or ordered to be even more useful, and any number of Ruby methods could be used within the code block.
-                 </p>
+                     It returns the following hash:
+                       <hr>
+                       <script src="https://gist.github.com/arlyons/be8d8bd77bbfeae60bda.js"></script>
+                     <p>
+                     Ruby returns a hash with a key for each of the various name lengths. While the keys are unique (all hash keys are) many of the values
+                     (the names) share a key since they are the same length. With the money you save on grouping Lyons, Smith and Jones you might still be able to afford
+                     the Keihanaikukauakahihuliheekahaunaele plaque.
+                     </p>
                 </div>
             </div>
         </div>
