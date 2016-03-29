@@ -88,14 +88,15 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                   <p>Using the <a href="t9-rails-skeleton.html"> Rails Skeleton</a> I configured for Devise, Simple Forms, Bootstrap, and Heroku, I'm going build a new app. This app is called Syntax Driller and it is a very simple app that let's you plug in code and see if you can memorize it.</p>
-                  <ol>
-                      <p>My app will have 5 models: </p>
+
+                  <p>My app will have 5 models: </p>
+                      <ol>
                           <li>User: which we already have as part of our template </li>
                           <li>Snippet: which will hold the code snippets we want to memorize</li>
                           <li>Guess: which will hold the user input </li>
                           <li>Mistakes: to track the mistakes we made </li>
                           <li>Group: to organize our different snippets, say by language </li>
-                  </ol>
+                      </ol>
                   <p>Following is a schema for my app: </p>
                   <hr>
                   <img src="img/syntax_driller/schema-resized.png" alt="schema">
@@ -114,17 +115,20 @@
                   <p>Run your rails server <code>rails s</code> to checkout the views for your recsources. We'll make them pretty later, but for right now, let's get this puppy crudding. First step is to open the console and start creating some records. Type <code>rails c</code> to open your console. </p>
                   <p>Let's see if we can create a snippet tied to a user with the following: </p>
                   <p>I have a couple of user records already from my template. Here I'll assign the first record to the variable "ali":
-                      <ul>
-                        <li><code>ali = User.find(1)</code></p></li>
-                        <p>Then I'll create a snippet tied to user "ali"</p>
-                        <li><code>ali.snippets.create(body: "I am the first snippet"</code></li>
-                        <p>I get an error message: <code>NoMethodError: undefined method `snippets' for #<User:0x007fbcc0843030></code> because I forgot to include the appropriate associations in my existing user model.</p>
+                      <ul class="non-bullet">
+                        <li><code>ali = User.find(1)</code>
+                        Then I'll create a snippet tied to user "ali"</li>
+                        <li><code>ali.snippets.create(body: "I am the first snippet"</code>
+                        I get an error message: <code>NoMethodError: undefined method `snippets' for #&lt;User:0x007fbcc0843030></code> because I forgot to include the appropriate associations in my existing user model.</li>
+                     </ul>
+
                         <p>Let's add the following associations to our User model: </p>
+                    <ul class="non-bullet">
                         <li><code>has_many :snippets, dependent: :destroy</code></li>
                         <li><code>has_many :groups, dependent: :destroy</code></li>
-                        <p>The line <code>dependent: :destroy</code> ensures that when a user record is destroyed, all of their snippets and groups will be destroyed as well.</p>
+                        <li>The line <code>dependent: :destroy</code> ensures that when a user record is destroyed, all of their snippets and groups will be destroyed as well.</li>
+                    </ul>
                         <p>Now when you create a snippet for user "ali" it should work.</p>
-                      </ul>
                     <p>That's a pretty good start to our app. I'm going to change our root route from the placeholder of <code>root 'users#index'</code> to <code>root 'snippets#index'</code>.
                     There is a lot left to do to get this app crudding and next we'll tackle associating our current user with the snippets online.</p>
                 </div>
