@@ -69,7 +69,7 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/Brooklyn_Bridge1/Brooklyn_Bridge1.jpg')">
+    <header class="intro-header" style="background-image: url('img/Brooklyn_Bridge1/tinyfied_Brooklyn_Bridge1.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -94,7 +94,7 @@
 
                 <p>The key to successful version control is keeping the master copy clean and bug-free. The master copy is the main branch where all approved branches (versions) are merged into. A collaborator begins by first making a copy of this master branch to store locally on their machines. Once they have made their changes locally, they "push" their modified version to GitHub for review by their team. Once approved, their version is merged into the master branch.</p>
 
-                <p>This brings us to Git and GitHub. It's important to know that Git is software, and can be used for many projects other than code (spreadsheets, text documents, photos) with or without collaborators. But if you ARE collaborating on a project using Git, you and your team will need a place where your project(s) can be stored and accessed by your different team members. GitHub is once such place.</p>
+                <p>This brings us to Git and GitHub. It's important to know that Git is software, and can be used for many projects other than code (spreadsheets, text documents, photos) with or without collaborators. But if you ARE collaborating on a project using Git, you and your team will need a place where your project(s) can be stored and accessed by your different team members. GitHub is once such place, especially popular for coders.</p>
 
                 <p>Here's a quick and dirty overview of the workflow process using Git and GitHub:</p>
 
@@ -111,58 +111,58 @@
                     <p>I won't cover best practices here, but generally you want to commit small changes often, and convention states use the present tense.</p>
                     <p>It's a good idea to use <code>git status</code> to display how your changes are being tracked. Below I have my new <code>about.html</code> file staged to be added: </p>
                     <hr>
-                    <img class="image-responsive" src="img/git_status.png">
+                    <img class="image-responsive" src="img/git_status_march_30.png" alt="git status">
                     <hr>
                     <li>Now we add our new file by typing <code>git add .</code>. The <code>.</code> signifies add all of the files. We also have the option of replacing it with the names of individual files.</li>
                     <hr>
-                    <img class="image-responsive" src="img/git_add.png">
+                    <img class="image-responsive" src="img/git_add.png" alt="git add">
                     <hr>
                     <p>Note the change in highlight from red to green.</p>
                     <li>Type <code>git status</code> again and note how our added files appear in yellow: </li>
                     <hr>
-                    <img class="image-responsive" src="img/added_files.png">
+                    <img class="image-responsive" src="img/added_files.png" alt="added files">
                     <p>Note: I also added some more changes besides the about.html page, just ignore those.</p>
                     <hr>
                     <li>Commit your changes with <code>git commit -m "[short, specific, present-tense commit message]"</code>
                     <hr>
-                    <img class="image-responsive" src="img/git_commit.png">
+                    <img class="image-responsive" src="img/git_commit_march_30.png" alt="git commit">
                     <p>This is such a simple change that my branch and commit message are identical. Not a bad thing.</p>
                     </li>
                     <hr>
                     <li>Push your changes to your remote with <code>git push [REMOTE NAME] [BRANCH NAME]</code></li>
                     <hr>
-                    <img class="image-responsive" src="img/git_push.png">
+                    <img class="image-responsive" src="img/git_push_march_30.png" alt="git push">
                     <hr>
                     <li>Create a pull request on GitHub</li>
                     <p>Find your repo on Github and click the big enticingly green New Pull Request button</p>
                     <hr>
-                    <img class="image-responsive" src="img/new_pull_req.png">
+                    <img class="image-responsive" src="img/new_pull_req_march_30.png" alt="new pull request">
                     <hr>
                     <p>Find your branch: </p>
                     <hr>
-                    <img class="image-responsive" src="img/resize_find_branch.png">
+                    <img class="image-responsive" src="img/find_branch_march_30.png" alt="find branch">
                     <hr>
                     <p>Merge pull request: </p>
                     <hr>
-                    <img class="image-responsive" src="img/resized_merge_pull_req.png">
+                    <img class="image-responsive" src="img/merge_pull_req_march_30.png" alt="merge pull request">
                     <hr>
                     <p>Confirm: </p>
                     <hr>
-                    <img class="image-responsive" src="img/confirm.png">
+                    <img class="image-responsive" src="img/confirm_march_30.png" alt="confirm">
                     <hr>
                     <p>Delete branch: </p>
                     <hr>
-                    <img class="image-responsive" src="img/tinyfied-delete_branch.png">
+                    <img class="image-responsive" src="img/delete_branch_march_30.png" alt="delete branch">
                     <h>
                     <li>Pull changes down from repo to your master local branch</li>
                     <hr>
                     <p>Back to the command line now. Checkout your master branch with <code>git checkout master</code>: </p>
                     <hr>
-                    <img class="image-responsive" src="img/git_checkout_master.png">
+                    <img class="image-responsive" src="img/git_checkout_master.png" alt="git checkout master">
                     <hr>
                     <p>Pull your changed down from the repo with <code>git pull</code></p>
                     <hr>
-                    <img class="image-responsive" src="img/git_pull.png">
+                    <img class="image-responsive" src="img/git_pull.png" alt="git pull">
                     <hr>
                 </ol>
                 </div>
