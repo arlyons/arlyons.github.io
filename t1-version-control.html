@@ -96,75 +96,70 @@
 
                 <p>This brings us to Git and GitHub. It's important to know that Git is software, and can be used for many projects other than code (spreadsheets, text documents, photos) with or without collaborators. But if you ARE collaborating on a project using Git, you and your team will need a place where your project(s) can be stored and accessed by your different team members. GitHub is once such place, especially popular for coders.</p>
 
-                <p>Here's a quick and dirty overview of the workflow process using Git and GitHub:</p>
+                <p>Here's a quick and dirty overview of the work-flow process using Git and GitHub:</p>
 
                 <h3>Using Git Locally to Track Changes</h3>
-                <ol>
-                    <li>Create a new branch <code>git checkout -b add-about-page</code></li>
-                    <hr>
-                    <img class="image-responsive" src="img/new_branch.png">
-                    <hr>
+                    <h5>1. Create a new branch <code>git checkout -b add-about-page</code></h5>
+                    <img class="image-responsive" src="img/new_branch.png" alt="new branch">
+
                     <p>Now all of the work you do locally (in this example adding an About Page) will be tracked on this specific branch, not the master. </p>
-                    <li>Add your changes</li>
+                    <h5>2. Add your changes</h5>
                     <p>Always start this process by typing <code>git status</code></p>
-                    <li>Commit your changes and include a commit message</li>
+                    <h5>3. Commit your changes and include a commit message</h5>
                     <p>I won't cover best practices here, but generally you want to commit small changes often, and convention states use the present tense.</p>
                     <p>It's a good idea to use <code>git status</code> to display how your changes are being tracked. Below I have my new <code>about.html</code> file staged to be added: </p>
-                    <hr>
+
                     <img class="image-responsive" src="img/git_status_march_30.png" alt="git status">
-                    <hr>
-                    <li>Now we add our new file by typing <code>git add .</code>. The <code>.</code> signifies add all of the files. We also have the option of replacing it with the names of individual files.</li>
-                    <hr>
+
+                    <h5>4. Now we add our new file by typing <code>git add .</code>. The <code>.</code> signifies add all of the files. We also have the option of replacing it with the names of individual files.</h5>
+
                     <img class="image-responsive" src="img/git_add.png" alt="git add">
-                    <hr>
+
                     <p>Note the change in highlight from red to green.</p>
-                    <li>Type <code>git status</code> again and note how our added files appear in yellow: </li>
-                    <hr>
+                    <h5>5. Type <code>git status</code> again and note how our added files appear in yellow: </h5>
+
                     <img class="image-responsive" src="img/added_files.png" alt="added files">
                     <p>Note: I also added some more changes besides the about.html page, just ignore those.</p>
-                    <hr>
-                    <li>Commit your changes with <code>git commit -m "[short, specific, present-tense commit message]"</code>
-                    <hr>
+
+                    <h5>6. Commit your changes with <code>git commit -m "[short, specific, present-tense commit message]"</code></h5>
+
                     <img class="image-responsive" src="img/git_commit_march_30.png" alt="git commit">
                     <p>This is such a simple change that my branch and commit message are identical. Not a bad thing.</p>
-                    </li>
-                    <hr>
-                    <li>Push your changes to your remote with <code>git push [REMOTE NAME] [BRANCH NAME]</code></li>
-                    <hr>
+
+                    <h5>7. Push your changes to your remote with <code>git push [REMOTE NAME] [BRANCH NAME]</code></h5>
+
                     <img class="image-responsive" src="img/git_push_march_30.png" alt="git push">
-                    <hr>
-                    <li>Create a pull request on GitHub</li>
+
+                    <h5>8. Create a pull request on GitHub</h5>
                     <p>Find your repo on Github and click the big enticingly green New Pull Request button</p>
-                    <hr>
+
                     <img class="image-responsive" src="img/new_pull_req_march_30.png" alt="new pull request">
-                    <hr>
+
                     <p>Find your branch: </p>
-                    <hr>
+
                     <img class="image-responsive" src="img/find_branch_march_30.png" alt="find branch">
-                    <hr>
+
                     <p>Merge pull request: </p>
-                    <hr>
+
                     <img class="image-responsive" src="img/merge_pull_req_march_30.png" alt="merge pull request">
-                    <hr>
+
                     <p>Confirm: </p>
-                    <hr>
+
                     <img class="image-responsive" src="img/confirm_march_30.png" alt="confirm">
-                    <hr>
+
                     <p>Delete branch: </p>
-                    <hr>
+
                     <img class="image-responsive" src="img/delete_branch_march_30.png" alt="delete branch">
-                    <h>
-                    <li>Pull changes down from repo to your master local branch</li>
-                    <hr>
+                    <h5>9. Pull changes down from repo to your master local branch</h5>
+
                     <p>Back to the command line now. Checkout your master branch with <code>git checkout master</code>: </p>
-                    <hr>
+
                     <img class="image-responsive" src="img/git_checkout_master.png" alt="git checkout master">
-                    <hr>
+
                     <p>Pull your changed down from the repo with <code>git pull</code></p>
-                    <hr>
+
                     <img class="image-responsive" src="img/git_pull.png" alt="git pull">
-                    <hr>
-                </ol>
+
                 </div>
             </div>
         </div>
