@@ -69,7 +69,7 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/Brooklyn_Bridge1/Brooklyn_Bridge1.jpg'')">
+    <header class="intro-header" style="background-image: url('img/Brooklyn_Bridge1/Brooklyn_Bridge1.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -91,16 +91,22 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
                     <p>
-                    The concept of classes and IDs in CSS is a bit confusing because they do exactly the same thing, so their use can seem
-                    interchangeable. To make matters more confusing you will often see classes and IDs used together on the same element. I'm going to try to
-                    explain their appropriate uses here.
-
+                    To the noob, CSS <strong>classes</strong> and <strong>IDs</strong> may seem to be interchangeable, but they their main difference lies in <strong>specificity</strong>. (If you use more than one ID on a page, it will be caught in an HTML validator.)<strong>IDs</strong> are more specific than <strong>classes</strong> and should be unique to a specific element. <strong>Classes</strong> can be used to style many different elements, and, somewhat confusingly, can be used alongside <strong>IDs</strong>.
                     </p>
                     <p>
-                    Classes can (and should) be created once and used over and over for a number of different elements that share the same styling. IDs on the other hand
-                    are to be used for unique elements (a sidebar is a great example because most websites only have one) that will not share
-                    specific stying with any other elements on the page. Additionally, each page is limited to one element with a specific ID. (If you use more than one, it will be caught in a validator.)
-                   </p>
+                    Below is an example of the HTML and CSS needed for a class that styles an element to have a blue background color:
+                    </p>
+                    <h3>HTML</h3>
+                    <script src="https://gist.github.com/arlyons/522985040e83b6938388c7e223e61d59.js"></script>
+                    <h3>CSS</h3>
+                    <script src="https://gist.github.com/arlyons/734422cc299b0ccf32a9ca159154c8aa.js"></script>
+
+                    <p>And below is an example for IDs. A sidebar is a good candidate for styling with an ID since most pages sites only have one.</p>
+                    <h3>HTML</h3>
+                    <script src="https://gist.github.com/arlyons/7a134562e3c43bab9a5dd2fe0a187204.js"></script>
+                    <h3>CSS</h3>
+                    <script src="https://gist.github.com/arlyons/6e5333a11731928b265c95f66c4cad98.js"></script>
+
                    <p>
                     Chris Coyer uses a great analogy in this <a href="https://css-tricks.com/the-difference-between-id-and-class/">article</a> classes are like bar codes and IDs are like serial numbers. If you need to make a broad sweeping change to the style of a page, you can do so by updating the class, much like updating a price in a bar code will change all of the products with that bar code. Whereas a change to an ID, will affect a specific, unique element
                     on your page only.
