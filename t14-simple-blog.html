@@ -87,7 +87,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                  <h2>Add Posts Resources</h2>
+
+                  <h1>Add Posts Resources</h1>
                     <p><code>rails new blog</code>
                     <p><code>cd blog</code></p>
                     <p><code>git init</code></p>
@@ -147,14 +148,64 @@
 
                   <h2>Add If Statement to the Post Controller for New Posts</h2>
                   <img src="img/rails_blog/create_if_statement.png">
+
                   <h2>Add Error Messages to New Post View</h2>
-
-
-
                     <p>Under the line <code> <%= form_for @post do |f| %> </code> add: </p>
                     <img src="img/rails_blog/error_messages.png">
-                    <p><code></code></p>
-                    <p><code></code></p>
+
+                  <h2>Add Edit Method to Controller</h2>
+
+                  <img src="img/rails_blog/edit_post_methods.png">
+
+                  <h2>Create the Edit and Form Partial</h2>
+
+                    <p>create the following view files</p>
+                    <p><code class="paths">views/posts/edit.html.erb</code></p>
+                    <p><code class="paths">views/posts/_form.html.erb</code></p>
+                    <p>copy the form from the <code class="paths">views/posts/new.html.erb</code> file and paste into the form</p>
+                    <p>In the new view file add <code><%= render 'form' %></code> where the form used to be</p>
+                    <p>Copy the updated new view and paste into the edit view, replacing "New Post" with "Edit Post"</p>
+
+                <h2>Add the Edit Form to the Show View</h2>
+                    <p>Add the link next to the date paragraph </p>
+                    <img src="img/rails_blog/show_view_edit_link.png">
+
+                <h2>Add Delete Method to Controller</h2>
+                    <img src="img/rails_blog/destroy_method.png">
+
+                <h2>Add delete link to show view</h2>
+                <p><code>|
+          <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %></code></p>
+
+          <h1>Add Comments Resources</h1>
+              <p>Generate the model in the console with <code>rails g model Comment name:string body:text post:references</code></p>
+              <p>Run the migration<code>rake db:migrate</code></p>
+           <h2>Add the Association in the Post Model</h2>
+              <p>Add <code>has_many :comments</code> in the Post Model</p>
+              <h2>Add the Nested Routes for Comments</h2>
+              <p>In the <code class="paths">config/routes.rb </code>file add the following</p>
+              <img src="img/rails_blog/comments_routes.png">
+
+           <h2>Create Comments Controller</h2>
+              <p><code>rails g controller Comments</code></p>
+              <p>Add create method in comments controller<code></code></p>
+              <img src="img/rails_blog/comments_create.png">
+              <h2>Create Comments Partial</h2>
+
+              <p><code class="paths">views/comments/_comment.html.erb</code> with the following: </p>
+              <img src="img/rails_blog/comment">
+              <p>and a form <code class="paths">views/comments/_form.html.erb</code></p>
+              <img src="img/rails_blog/comment_partial.png">
+              <h2>Add Comments to Post Show View</h2>
+              <img src="img/rails_blog/post_show_comments.png">
+              <p><code></code></p>
+
+
+
+
+
+
+
 
 
                 </div>
