@@ -95,15 +95,14 @@
                   <p>
                   As an example, let's say you own a shop called Widget Mania selling... widgets.
                   You need a way to standardize widget pricing to cut down on time. Every
-                  single widget in the store will need:
+                  single widget in the store will need a:
                   <ul>
                      <li>5 digit widget code</li>
                      <li>price</li>
                    </ul>
 
                   Instead of having to write these methods each time you create a widget, you can
-                  create a widget class with these three methods. Each time you create a widget object from the widget class,
-                  the widget class methods are automatically available to the widget object.
+                  create a widget class with two methods. Each time you create a widget object from the widget class, the widget class methods are automatically available to the widget object.
                   </p>
                   <p>Here is the code for creating our Widget class</p>
 
@@ -112,7 +111,7 @@
 
 
                   <p>
-                  Our newly minted Widget class takes 2 arguments: <strong>code</strong> and <strong> price</strong>. Its initialize method creates 2 instance variables: <code>@code</code> and <code>@price</code> (instance variables start with an @ symbol), that will be available throughout the class, and not just within the initialize method. In other words, the instance methods are scoped to the entire class, unlike a local variable which is scoped only to the method it was created in method and then disappears once the method has run. Variable scoping within classes is a major advantage to using classes and why they are so efficient. Also important to note in terms of syntax is that classes are named with
+                  Our newly minted Widget class takes 2 arguments: <strong>code</strong> and <strong> price</strong>. Its initialize method creates 2 instance variables: <code>@code</code> and <code>@price</code> (instance variables start with an @ symbol), that will be available throughout the class, and not just within the initialize method. In other words, the instance methods are scoped to the entire class (unlike a local variable which is scoped only to the method it was created in, disappearing once the method is done running). Variable scoping within classes is a major advantage to using classes and why they are so efficient. Also important to note in terms of syntax is that classes are named with
                   CamelCase and always include the keyword <code>end</code>.
                   </p>
 
@@ -123,6 +122,11 @@
                    <p>
                    New objects are created by calling <code>new</code> on the class (with a . of course). We passed two arguments: the extremely tidy and unlikely five digit code of <strong>12345</strong> and a cheapo price of <strong>1.99</strong>.
                    </p>
+
+                   <p>Thanks to our <code>attr_accessor</code> method, we can call <code>.price</code> and <code> .code</code> on new widget object (aka instance of the <code>Widget Class</code>):</p>
+
+                  <script src="https://gist.github.com/arlyons/7113ca49a0b27d7d2663d644d0ebe2ed.js"></script>
+
                    <p>
                    There's no end to the methods we can dream up for our baby widget objects. We can create a method that adds the $ to our price, generate a standardized UPC code, sort them, group them and on and on. If we have some outlier widgets that take exception to our class methods, we can accommodate for that, too, but this gets into inheritance, which is another juicy topic for another day.
                    </p>
