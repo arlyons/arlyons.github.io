@@ -21,9 +21,8 @@
 title: Building a Jekyll Site with a Noob
 email: ali@lyonsdevshop.com
 description: >- # this means to ignore newlines until "baseurl:"
-    I'm going to post step by step instructions on how to build a free Jekyll
-    site hosted with GitHub pages github_username: Jungle Sunshine
-    She'll post questions in the comments and share her work. You can also post comments
+    I'm going to post step by step instructions to complete noob on how to build a free Jekyll
+    site hosted with GitHub pages. The Noob will post questions in the comments and share her work. You can also post comments
     via pull requests on GitHub.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
