@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Word"
+title:  "1 Create GH Page Repo"
 date:   2020-05-17 16:10:47 -0400
 categories: 
 ---
